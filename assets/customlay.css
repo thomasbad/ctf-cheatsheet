@@ -144,6 +144,10 @@ footer.footer {
   background: var(--footer-bkg-color);
 }
 
+a.aboutLink {
+  color: rgb(218, 72, 174);
+}
+
 
 /* MODE SWITCH */
 .mode-switch {
