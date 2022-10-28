@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-
+<body onload="themeOnLoad()">
     <container class="container">
         <div id="app">
 
@@ -48,6 +47,19 @@
                             <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
                                 About
                             </a>
+                            <!-- Dark mode toggle -->
+                            <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
+                                <label class="switch">
+                                    <input class="btn-toggle" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,6 +101,22 @@
                                 About
                             </a>
                         </li>
+                        <!-- Dark mode toggle -->
+                        <li>
+                            <br>
+                            <div class="mode-switch">
+                                <label class="switch" for="checkbox">
+                                    <input class="btn-toggle" id="checkbox" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
                     </ul>
                 </aside>
 
@@ -100,23 +128,31 @@
                         style="display: block; margin-left: auto; margin-right: auto; width: 50%; padding: 0px 20px 20px 20px;">
                     <p style="padding-top: 10px;">
                         Long Story Short: This website is being created because of my homework.<br><br>
-                        I am into a web design course and require us to make a 6 pages website as a project, 
-                        it contain a very simple requirement which only require students to put in their HTML5 standard code and CSS, and done.<br><br>
-                        Then I realized why shouldn't I create a website I would use? As I usually needs to suffer for looking into bunch of bookmarks and looking for stuff I needs
-                        to be used in CTF Game, I wonder maybe I should at least put a few very basic things here I always needs to look in it into a single website, 
+                        I am into a web design course and require us to make a 6 pages website as a project,
+                        it contain a very simple requirement which only require students to put in their HTML5 standard
+                        code and CSS, and done.<br><br>
+                        Then I realized why shouldn't I create a website I would use? As I usually needs to suffer for
+                        looking into bunch of bookmarks and looking for stuff I needs
+                        to be used in CTF Game, I wonder maybe I should at least put a few very basic things here I
+                        always needs to look in it into a single website,
                         so that I can at least decrease a few bookmarks in my browser, and here it is.<br><br>
-                        If you found here just because you've googled hacking related stuff and lead to here, and totally new, I suggest you may really try to learn
-                        Linux first, as most of the open sourced tools (and most of them are extremely amazing) goes to there, with many well packaged distribution as well which
-                        would be greatly hell and friend to newbie. You can play around and learn command from here as I think they do great by leading the newbies learn their
-                        their basic command easily, and enjoy of the whitehat gaming at the same time: 
-                        <a href="http://overthewire.org/wargames/bandit/">&nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;OverTheWire: Bandit</a><br><br>
-                        I am not sure if I will extend the content here as time is quite tight too finish all the stuff I want to put in here, but I hope it can be done slowly
+                        If you found here just because you've googled hacking related stuff and lead to here, and
+                        totally new, I suggest you may really try to learn
+                        Linux first, as most of the open sourced tools (and most of them are extremely amazing) goes to
+                        there, with many well packaged distribution as well which
+                        would be greatly hell and friend to newbie. You can play around and learn command from here as I
+                        think they do great by leading the newbies learn their
+                        their basic command easily, and enjoy of the whitehat gaming at the same time:
+                        <a href="http://overthewire.org/wargames/bandit/">&nbsp;<i class="fa fa-thumbs-o-up"
+                                aria-hidden="true"></i>&nbsp;OverTheWire: Bandit</a><br><br>
+                        I am not sure if I will extend the content here as time is quite tight too finish all the stuff
+                        I want to put in here, but I hope it can be done slowly
                         in the future, and would be helpful for some CTF newbies there. <br><br>
                         If you found me interested, you can follow or contact with my GitHub here: &nbsp;
-                        <a href="https://github.com/thomasbad"><i class="fa fa-github" aria-hidden="true"></i>&nbsp;https://github.com/thomasbad</a>
-    
+                        <a href="https://github.com/thomasbad"><i class="fa fa-github"
+                                aria-hidden="true"></i>&nbsp;https://github.com/thomasbad</a>
+                        <br><br><br><br><br><br>
                     </p>
-                    <br><br><br><br><br><br>
                 </div>
                 <!--End of Home-->
             </section>

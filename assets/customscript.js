@@ -59,3 +59,39 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+//Load Darkmode localstorage when page loaded
+function themeOnLoad() {
+  var isDarkMode = localStorage.getItem("isDarkMode");
+  if (isDarkMode == "true") {
+    darkMode();
+  }else{
+    lightMode();
+  }
+}
+
+//dark mode button trigger
+function darkModeTrig() {
+  var element = document.body;
+  var isDarkMode = localStorage.getItem("isDarkMode");
+  element.classList.toggle("dark-mode");
+  if (isDarkMode === "true") {
+    localStorage.setItem("isDarkMode", false);
+  }else{
+    localStorage.setItem("isDarkMode", true);
+  }  
+}
+
+//dark mode onload checking
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  document.getElementById("checkbox").checked = true; //Switch the dark button by default if it is in dark mode
+}
+
+//light mode
+function lightMode() {
+  var element = document.body;
+  element.classList.toggle("light-mode");
+}
+

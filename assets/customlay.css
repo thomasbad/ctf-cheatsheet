@@ -87,7 +87,25 @@
     background-color: #555; /* Add a dark-grey background on hover */
   }
 
-
+  /*Back to top button style*/
+  #darkBtn {
+    position: fixed; /* Fixed/sticky position */
+    top: 20px; /* Place the top at the bottom of the page */
+    right: 50px; /* Place the button 50px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(193, 191, 206); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #darkBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
 
 /* The whole webpage div style */
 #app {
@@ -99,4 +117,99 @@
     #menu-toggle:checked+.nav-menu {
         display: block;
     }
+}
+
+/* Dark mode style */
+body,
+body.light-mode {
+  --text-color: #222;
+  background: #fff;
+  --footer-bkg-color: rgb(247, 245, 245);
+}
+
+body.dark-mode {
+  --text-color: #eee;
+  background: #2e2e2e;
+  --footer-bkg-color: rgb(65, 65, 65);
+}
+
+h1,
+h2,
+p,
+p.menu-label {
+  color: var(--text-color);
+}
+
+footer.footer {
+  background: var(--footer-bkg-color);
+}
+
+
+/* MODE SWITCH */
+.mode-switch {
+  grid-area: 2/3/3/5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: .6em;
+}
+
+.mode-label {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  visibility: var(--visibility);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightblue;
+  border-radius: 34px;
+  transition: 0.6s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #1e38ff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider-icon {
+  transform: rotate(250deg);
+  position: absolute;
+  right: 6px;
+  top: 7px;
 }
