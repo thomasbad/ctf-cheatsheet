@@ -77,9 +77,13 @@ function darkModeTrig() {
   element.classList.toggle("dark-mode");
   if (isDarkMode === "true") {
     localStorage.setItem("isDarkMode", false);
+    document.getElementById("checkbox").checked = false; //Switch the dark button by default if it is in dark mode
+    document.getElementById("mobileSwitch").checked = false;
   }else{
     localStorage.setItem("isDarkMode", true);
-  }  
+    document.getElementById("checkbox").checked = true; //Switch the dark button by default if it is in dark mode
+    document.getElementById("mobileSwitch").checked = true; //sync both switch into same status
+  } 
 }
 
 //dark mode onload checking
@@ -87,6 +91,7 @@ function darkMode() {
   var element = document.body;
   element.classList.toggle("dark-mode");
   document.getElementById("checkbox").checked = true; //Switch the dark button by default if it is in dark mode
+  document.getElementById("mobileSwitch").checked = true;
 }
 
 //light mode
