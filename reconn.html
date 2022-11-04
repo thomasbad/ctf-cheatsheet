@@ -15,14 +15,111 @@
     <container class="container">
         <div id="app">
             <!--Mobile Nav Bar-->
-            <div id="navmobile"></div>
+            <nav class="nav has-shadow">
+                <div class="navbar has-shadow is-black is-hidden-tablet">
+                    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                    <a href="javascript:void(0);" class="navbar-burger" id="burger" onclick="navBarShow()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <div class="topnav">
+
+                        <!-- Navigation links (hidden by default) -->
+                        <div id="navMenu" style="display:none;">
+                            <a href="index.html" class="button is-primary is-medium is-hidden-tablet">
+                                Home
+                            </a>
+                            <a href="payload.html" class="button is-link is-medium is-hidden-tablet">
+                                Payload
+                            </a>
+                            <a href="gtfobins.html" class="button is-info is-medium is-hidden-tablet">
+                                GTFOBins
+                            </a>
+                            <a href="mimikatz.html" class="button is-danger is-medium is-hidden-tablet">
+                                Mimikatz
+                            </a>
+                            <a href="reconn.html" class="button is-success is-medium is-hidden-tablet">
+                                Reconn
+                            </a>
+                            <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
+                                About
+                            </a>
+                            <!-- Dark mode toggle -->
+                            <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
+                                <label class="switch">
+                                    <input class="btn-toggle" type="checkbox" id="mobileSwitch" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
             <!--Back to Top button-->
             <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-angle-double-up"
                     aria-hidden="true"></i></button>
             <!-- Content section-->
             <section class="main-content columns is-fullheight">
                 <!-- Computer Sidebar-->
-                <div id="navdesktop"></div>
+                <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+                    <p class="menu-label is-hidden-touch">CTF Cheatsheet For Noob</p>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="index.html" class="button is-primary is-medium">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="payload.html" class="button is-link is-medium">
+                                Payload
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gtfobins.html" class="button is-info is-medium">
+                                GTFOBins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mimikatz.html" class="button is-danger is-medium">
+                                Mimikatz
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reconn.html" class="button is-success is-medium">
+                                Reconn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="button is-warning is-medium">
+                                About
+                            </a>
+                        </li>
+                        <!-- Dark mode toggle -->
+                        <li>
+                            <br>
+                            <div class="mode-switch">
+                                <label class="switch" for="checkbox">
+                                    <input class="btn-toggle" id="checkbox" type="checkbox" onclick="darkModeTrig()" />
+                                    <span class="slider">
+                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+
                 <!--Content-->
                 <div class="container is-fluid">
 
@@ -31,7 +128,6 @@
                     <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with
                         researching, then process a bit further</h2>
                     <!-- Page Menu -->
-                    <div class="has-text-centered">
                     <a href="#h1" class="button is-link is-small is-light is-rounded">NMap</a>
                     <a href="#h3" class="button is-warning is-small is-light is-rounded">SQLMap</a>
                     <a href="#h5" class="button is-success is-small is-light is-rounded">SQL with Burp</a>
@@ -39,7 +135,6 @@
                     <a href="#h10" class="button is-warning is-small is-light is-rounded">Feroxbuster</a>
                     <a href="#h11" class="button is-danger is-small is-light is-rounded">Ffuf</a>
                     <a href="#h16" class="button is-info is-small is-light is-rounded">Hydra</a>
-                    </div>
 
                     <br><br>
                     <!--Command board-->
@@ -241,7 +336,6 @@
         </footer>
     </container>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
 <script src="https://kit.fontawesome.com/96d3b659ea.js" crossorigin="anonymous"></script>
 <script src="assets/customscript.js"></script>
