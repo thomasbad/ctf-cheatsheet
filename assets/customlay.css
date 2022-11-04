@@ -217,3 +217,9 @@ input:checked + .slider:before {
   right: 6px;
   top: 7px;
 }
+
+.preview-iframe {
+  /* tell browsers to make the iframe opaque
+     for documents with color-scheme:dark */
+  background-color: white;
+}
