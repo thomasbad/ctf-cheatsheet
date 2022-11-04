@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Mobile Nav Bar-->
+<nav class="nav has-shadow">
+    <div class="navbar has-shadow is-black is-hidden-tablet">
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="navbar-burger" id="burger" onclick="navBarShow()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="topnav">
+
+            <!-- Navigation links (hidden by default) -->
+            <div id="navMenu" style="display:none;">
+                <a href="index.html" class="button is-primary is-medium is-hidden-tablet">
+                    Home
+                </a>
+                <a href="reconn.html" class="button is-link is-medium is-hidden-tablet">
+                    Reconn
+                </a>
+                <a href="gtfobins.html" class="button is-info is-medium is-hidden-tablet">
+                    GTFOBins
+                </a>
+                <a href="mimikatz.html" class="button is-danger is-medium is-hidden-tablet">
+                    Mimikatz
+                </a>
+                <a href="payload.html" class="button is-success is-medium is-hidden-tablet">
+                    Payload
+                </a>
+                <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
+                    About
+                </a>
+                <!-- Dark mode toggle -->
+                <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
+                    <label class="switch">
+                        <input class="btn-toggle" type="checkbox" id="mobileSwitch" onclick="darkModeTrig()"/>
+                        <span class="slider">
+                            <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
+                                stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</html>
