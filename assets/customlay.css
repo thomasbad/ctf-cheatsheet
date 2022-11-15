@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Style the navigation menu */
 .topnav {
     overflow: hidden;
