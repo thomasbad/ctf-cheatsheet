@@ -9,7 +9,7 @@ $(function () {
 $("a.button").on("click", function(){
   const switchBtn = $(this).parent().data("target");   
     $("div[id]").addClass("is-hidden");
-    $("div[id|=switchBtn]").removeClass("is-hidden");
+    $("div").removeClass("is-hidden");
 });
 
 //Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon
