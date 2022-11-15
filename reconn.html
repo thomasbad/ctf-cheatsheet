@@ -31,18 +31,18 @@
                     <h2 class="has-text-centered is-size-5" style="padding-bottom:30px">Everything start with
                         researching, then process a bit further</h2>
                     <!-- Page Menu -->
-                    <div class="has-text-centered" style="padding-bottom:1%;">
-                        <a class="button is-link is-small is-light is-rounded" data-target="nmap">NMap</a>
-                        <a class="button is-warning is-small is-light is-rounded" data-target="sqlmap">SQLMap</a>
-                        <a class="button is-success is-small is-light is-rounded" data-target="burp">SQL with Burp</a>
-                        <a class="button is-info is-small is-light is-rounded" data-target="burp">Gobuster</a>
-                        <a class="button is-warning is-small is-light is-rounded" data-target="feroxbuster">Feroxbuster</a>
-                        <a class="button is-danger is-small is-light is-rounded" data-target="ffuf">Ffuf</a>
-                        <a class="button is-info is-small is-light is-rounded" data-target="hydra">Hydra</a>
-                        </div>
+                    <div class="has-text-centered">
+                    <a href="#h1" class="button is-link is-small is-light is-rounded">NMap</a>
+                    <a href="#h3" class="button is-warning is-small is-light is-rounded">SQLMap</a>
+                    <a href="#h5" class="button is-success is-small is-light is-rounded">SQL with Burp</a>
+                    <a href="#h9" class="button is-info is-small is-light is-rounded">Gobuster</a>
+                    <a href="#h10" class="button is-warning is-small is-light is-rounded">Feroxbuster</a>
+                    <a href="#h11" class="button is-danger is-small is-light is-rounded">Ffuf</a>
+                    <a href="#h16" class="button is-info is-small is-light is-rounded">Hydra</a>
+                    </div>
+
+                    <br><br>
                     <!--Command board-->
-                    <div id="tab-content">
-                    <div id="nmap">
                     <article class="message is-link">
                         <div class="message-header" id="h1">
                             <p>Enumerating ports with NMap</p>
@@ -63,8 +63,7 @@
                             nmap -sV --script=http-sql-injection {IP or domain name} –p {80/443}
                         </div>
                     </article>
-                    </div>
-                    <div id="sqlmap" class="is-hidden">
+
                     <article class="message is-warning">
                         <div class="message-header" id="h3">
                             <p>SQLMap DB Enum</p>
@@ -85,8 +84,7 @@
                             sqlmap -u "{SQLi query link}" -D {DB name} --dump-all
                         </div>
                     </article>
-                    </div>
-                    <div id="burp" class="is-hidden">
+
                     <article class="message is-success">
                         <div class="message-header" id="h5">
                             <p>SQL schema Query used in Burp repeater</p>
@@ -118,8 +116,7 @@
                             0 UNION ALL SELECT notes,null,null,null,null FROM {table name} WHERE id = {primary key}
                         </div>
                     </article>
-                    </div>
-                    <div id="gobuster" class="is-hidden">
+
                     <article class="message is-info">
                         <div class="message-header" id="h9">
                             <p>Gobuster Directory/Sub Domain/VHOST Scanning</p>
@@ -131,8 +128,7 @@
                             gobuster {dir/dns/vhost} -u {target ip} -w {wordlist} -v
                         </div>
                     </article>
-                    </div>
-                    <div id="feroxbuster" class="is-hidden">
+
                     <article class="message is-warning">
                         <div class="message-header" id="h10">
                             <p>Feroxbuster Web Directory rush Scanning</p>
@@ -145,8 +141,7 @@
                             {Include Header} -vv
                         </div>
                     </article>
-                    </div>
-                    <div id="ffuf" class="is-hidden">
+
                     <article class="message is-danger">
                         <div class="message-header" id="h11">
                             <p>Ffuf fuzzing typical directory discovery</p>
@@ -195,8 +190,7 @@
                             -fc 401
                         </div>
                     </article>
-                    </div>
-                    <div id="hydra" class="is-hidden">
+
                     <article class="message is-info">
                         <div class="message-header" id="h16">
                             <p>Hydra FTP Brute forcing</p>
@@ -227,8 +221,7 @@
                             "/:username=^USER^&password=^PASS^:F=incorrect" -V
                         </div>
                     </article>
-                    </div>
-                </div>
+
                     <br><br><br><br>
                     <!--End of Command board-->
                 </div>
