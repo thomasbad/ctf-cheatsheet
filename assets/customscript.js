@@ -90,3 +90,25 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+//Content Switcher
+const switchButtons = $("a.contentSwitcher");
+const contentSwitchDivs = $('div.contentswitch');
+
+switchButtons.on("click", function(){
+  const btnTarget = $(this).data('target')
+    const contentToShow = $(`#${btnTarget}`)
+    contentSwitchDivs.not(btnTarget).addClass("is-hidden");
+    contentToShow.removeClass("is-hidden");
+});
+
+
+//Content Expander
+const expandButtons = $("a.contentExpander");
+
+expandButtons.on("click", function(){
+  contentSwitchDivs.removeClass("is-hidden");
+});
+
+
+//

