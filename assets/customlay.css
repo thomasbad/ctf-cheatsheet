@@ -124,17 +124,34 @@ html {
 }
 
 /* Dark mode style */
+
 body,
 body.light-mode {
   --text-color: #222;
-  background: #fff;
+  background: linear-gradient(-45deg, #ffeae3, #ffdcea, #ede0ff, #dbfff7);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   --footer-bkg-color: rgb(247, 245, 245);
 }
 
 body.dark-mode {
   --text-color: #eee;
-  background: #2e2e2e;
+  background: linear-gradient(-45deg, #202020, #465849, #524a6e, #72744c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   --footer-bkg-color: rgb(65, 65, 65);
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 h1,
