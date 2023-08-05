@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Style the navigation menu */
@@ -35,9 +35,9 @@ html {
 .tooltip {
     position: relative;
     display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
+}
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 140px;
     background-color: #555;
@@ -52,9 +52,9 @@ html {
     margin-left: -75px;
     opacity: 0;
     transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
+}
+
+.tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -63,53 +63,80 @@ html {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
+}
 
 /*Back to top button style*/
-  #topBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 50px; /* Place the button 50px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: rgb(109, 86, 235); /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-  }
-  
-  #topBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
-  }
+#topBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 50px;
+    /* Place the button 50px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: rgb(109, 86, 235);
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+}
 
-  /*Back to top button style*/
-  #darkBtn {
-    position: fixed; /* Fixed/sticky position */
-    top: 20px; /* Place the top at the bottom of the page */
-    right: 50px; /* Place the button 50px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: rgb(193, 191, 206); /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-  }
-  
-  #darkBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
-  }
+#topBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
+
+/*Back to top button style*/
+#darkBtn {
+    position: fixed;
+    /* Fixed/sticky position */
+    top: 20px;
+    /* Place the top at the bottom of the page */
+    right: 50px;
+    /* Place the button 50px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: rgb(193, 191, 206);
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+}
+
+#darkBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
 
 /* The whole webpage div style */
 #app {
@@ -127,120 +154,132 @@ html {
 
 body,
 body.light-mode {
-  --text-color: #222;
-  background: linear-gradient(-45deg, #ffeae3, #ffdcea, #ede0ff, #dbfff7);
+    --text-color: #222;
+    /*background: linear-gradient(-45deg, #ffeae3, #ffdcea, #ede0ff, #dbfff7);*/
+    background: hsla(64, 41%, 92%, 1);
+    background: linear-gradient(45deg, hsla(64, 41%, 92%, 1) 0%, hsla(194, 88%, 94%, 1) 50%, hsla(306, 75%, 92%, 1) 100%);
+    background: -moz-linear-gradient(45deg, hsla(64, 41%, 92%, 1) 0%, hsla(194, 88%, 94%, 1) 50%, hsla(306, 75%, 92%, 1) 100%);
+    background: -webkit-linear-gradient(45deg, hsla(64, 41%, 92%, 1) 0%, hsla(194, 88%, 94%, 1) 50%, hsla(306, 75%, 92%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#f2f3e2", endColorstr="#E0F6FD", GradientType=1);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-  --footer-bkg-color: rgb(247, 245, 245);
+    --footer-bkg-color: rgb(247, 245, 245);
 }
 
 body.dark-mode {
-  --text-color: #eee;
-  background: linear-gradient(-45deg, #202020, #465849, #524a6e, #72744c);
+    --text-color: #eee;
+    /*background: linear-gradient(-45deg, #202020, #465849, #524a6e, #72744c);*/
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(45deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+    background: -moz-linear-gradient(45deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+    background: -webkit-linear-gradient(45deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#295270", endColorstr="#524175", GradientType=1);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-  --footer-bkg-color: rgb(65, 65, 65);
+    --footer-bkg-color: rgb(65, 65, 65);
 }
 
 @keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1,
 h2,
 p,
 p.menu-label {
-  color: var(--text-color);
+    color: var(--text-color);
 }
 
 footer.footer {
-  background: var(--footer-bkg-color);
+    background: var(--footer-bkg-color);
 }
 
 a.aboutLink {
-  color: rgb(218, 72, 174);
+    color: rgb(218, 72, 174);
 }
 
 
 /* MODE SWITCH */
 .mode-switch {
-  grid-area: 2/3/3/5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: .6em;
+    grid-area: 2/3/3/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: .6em;
 }
 
 .mode-label {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  visibility: var(--visibility);
+    font-size: 1rem;
+    margin-bottom: 16px;
+    visibility: var(--visibility);
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: lightblue;
-  border-radius: 34px;
-  transition: 0.6s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightblue;
+    border-radius: 34px;
+    transition: 0.6s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
 }
 
-input:checked + .slider {
-  background-color: #1e38ff;
+input:checked+.slider {
+    background-color: #1e38ff;
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
+input:checked+.slider:before {
+    transform: translateX(26px);
 }
 
 .slider-icon {
-  transform: rotate(250deg);
-  position: absolute;
-  right: 6px;
-  top: 7px;
+    transform: rotate(250deg);
+    position: absolute;
+    right: 6px;
+    top: 7px;
 }
 
 .preview-iframe {
-  /* tell browsers to make the iframe opaque
+    /* tell browsers to make the iframe opaque
      for documents with color-scheme:dark */
-  background-color: white;
+    background-color: white;
 }
